@@ -35,7 +35,7 @@ Suspicious about libraries that use alot of macros, because it makes it non-tran
 - **[pedestal.io](http://pedestal.io)**
 - Hexagonal Archtitecture. Core that manipulates data. Ports/adapters to the core to perform IO (GUI, WebServices, Database, tests)
 
-Lookup: Dijkstra quote on abstraction.
+_"The purpose of abstraction is not to be vague, but to create a new semantic level in which one can be absolutely precise."_ - Edsger Dijkstra
 
 
 
