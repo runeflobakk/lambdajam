@@ -1,6 +1,6 @@
 Data, Visibility, and Abstraction
 =====================================
-**Stuart Sierra**
+**[Stuart Sierra](http://twitter.com/stuartsierra)**
 
 
 
