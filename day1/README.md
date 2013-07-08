@@ -92,10 +92,13 @@ So Erlang is fault tolerant, but what you _need_ to think about is
 - how other processes behave (continue as before, or restart), and the hierarchy of that behavior
 - restarting process(es) in a consistent initial state
 
+The correct semantics for
+
 **OTP:** The JEE of Erlang. It does what JEE promisses, but fails to provide.
 
 
-<!-- 1/132: Jim Gray: Why do computers stop and what can -->
+Jim Gray: Why do computers stop and what can be done about it
+http://www.hpl.hp.com/techreports/tandem/TR-85.7.pdf
 
 
 
@@ -112,11 +115,23 @@ Workshop: Hands-on Intro to Haskell
 ====================================
 **Bartosz Milewski**
 
+**Conceptual model:**
+Your program is a tree of pure functions. Since Haskell is lazy, to get something actually done, this tree is triggered by IO, and any side effects produced by the tree is done "outside" of the pure functions of your program.
+
+Turning top level design into types.
+---------------------------------------
+
+https://www.fpcomplete.com/user/bartosz/boh-code
+
+Worked through a simple expression calculator with assignement capability:
+- tokenizer String -> [Token]
+- parser [Token] -> Tree
+- evaluator Tree -> Double
+
+To be able to support assignments, the use of a symbol table was modelled into the types, and passed to and returned from all the functions. From there the code was refactored into monads, in particular the Maybe, Either, and State monad, the latter being used for transparently passing the symbol table, i.e. "the world" as far as the calculator program is concerned. The key point was, that if one does not know monads, one will invent them when abstracting the common code patterns.
+
+Very nice workshop. Although most of the concepts covered in the first part of the workshop should be known to functional programmers, I like that we do not rush through things. The syntax is new, and to really grasp what is going on, one need to process the code mentally.
 
 
 
-
-Systems that run forever self-heal and scale
-**********************************************
-**Joe Armstrong**
 
