@@ -44,11 +44,21 @@ Lookup: Dijkstra quote on abstraction.
 
 
 
-Simile-Free Monad Recipes
+(Simile-Free) Monad Recipes
 ===================================
 **[Aditya Siram](http://twitter.com/deech)**
 
+"Cookbook recipees" session. How to emulate imperative typical idioms.
 
+**Monadic code:**
+- shuffling stuff in and out of contexts.
+- Common "interface" to take values out of an arbitrary monad, and put into an arbitrary monad.
+- Haskell: left-arrow (&lt;-) and "return".
+
+**Writer monad use case**: Web forms; get complete list of user's error inputs.
+
+A bit hard to follow for non-Haskellers, at least for me. Lots of code examples, values in an out of monads.
+ 
 
 
 
@@ -58,7 +68,14 @@ Simile-Free Monad Recipes
 
 Let It Crash: Erland Fault Tolerance
 ======================================
-**Tristan Sloughter**
+**[Tristan Sloughter](http://twitter.com/t_sloughter)**
+
+
+
+
+
+
+
 
 
 
