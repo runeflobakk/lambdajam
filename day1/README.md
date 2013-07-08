@@ -66,9 +66,37 @@ A bit hard to follow for non-Haskellers, at least for me. Lots of code examples,
 
 
 
-Let It Crash: Erland Fault Tolerance
+Let it Crash: Erland Fault Tolerance
 ======================================
 **[Tristan Sloughter](http://twitter.com/t_sloughter)**
+
+http://thisotplife.tumblr.com
+http://learnyousomeerlang.com
+
+Erlang created in 1986 by Joe Armstrong, with concurrency and error recovery built-in
+
+Erlang enables coding "happy path", and if bad things happen, it's OK.
+Keep working to a level of satisfaction in the presence of failure. Degradation is better than "no response".
+Graceful degardation: black knight from Knights of the Round Table (Monty Python)
+
+1/132 bugs are _NOT_ Heisenbugs
+(Heisenbugs are bugs you cannot reproduce)
+
+Coding happy paths:
+- less code, less ifs and spaghetti
+- less bugs
+- easier to reason
+
+So Erlang is fault tolerant, but what you _need_ to think about is
+- how processes should behave in an event of failure
+- how other processes behave (continue as before, or restart), and the hierarchy of that behavior
+- restarting process(es) in a consistent initial state
+
+**OTP:** The JEE of Erlang. It does what JEE promisses, but fails to provide.
+
+
+<!-- 1/132: Jim Gray: Why do computers stop and what can -->
+
 
 
 
