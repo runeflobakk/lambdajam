@@ -135,6 +135,16 @@ Compile JS from ClojureScript
 - code must not rely on other code that cannot be compiled to JS
 
 
+FRP with Javelin
+- Functional Reactive Programming
+- like a spreadsheet, updating one cell, immediately updates depending cells
+
+
+Lots of libraries. Some frameworks for pulling it all together:
+[Luminus](http://luminusweb.net)
+[Pedestal](http://pedestal.io) - good for JavaScript-heavy single-page apps
+[Hoplon](https://github.com/tailrecursion/hoplon) only client-side, HTML as expressions voodoo magic.
+
 
 
 
