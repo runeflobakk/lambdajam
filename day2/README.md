@@ -4,16 +4,19 @@ Functional I/O in Scala
 
 I/O is the problem child of functional programming.
 
+**What is needed**
+Composability, scalability and resource-safety
+
+
 Treating files as collections?
 - Wrap it in an Iterable
 - lazy
 - when is the file closed?
 
-**What is needed:**
-Composability, scalability and resource-safety
 
-Solution: good old fold left
-IOC: producer pushes data instead of consumer pulls + futures & promises.
+
+Solution: apparently good old fold left
+IOC: producer pushes data instead of consumer pulls, with some added futures & promises.
 
 ```Produces  ->  Transformer  -> Consumer```
 
@@ -38,27 +41,30 @@ Functional Async Without the Pain
 
 **Actors**
 - abstraction over message passing
+- actors do:
   - send messages
-  - create actors
-  - respons 
+  - respond 
+  - create other actors
 
 
-**Scatter/Gather**
+**[Scatter/Gather](http://www.enterpriseintegrationpatterns.com/BroadcastAggregate.html)**
 Problem: scaling a search index
 
 Typical Actor-implementations gets dificult to compose, and reason about the business logic, what gets sent where, and so on.
 Callback-code needs mental book keeping on the actual stack of operations.
 Composition is tricky. "Return type" of actors is essentially ```Nothing```
 
-**Futures:**
+
+**Futures**
 - callback oriented
-- verbose.
+- verbose
 
 
-**Async**
+**[Async](https://github.com/scala/async)**
+
 ```
 async {
-   await(someFuture) + await(someOtherFuture) 
+   await(someFn) + await(someOtherFn) 
 }
 ```
 
@@ -67,15 +73,18 @@ Looks like it is waiting and blocking the thread, but the macro is in fact makin
 Async is not a very good match for actor based applications. (Considered an anti-pattern at Typesafe)
 
 
-"Machines" Scala library (https://github.com/runarorama)
+**[Machines](https://github.com/runarorama)**
 Composable network of stream processors
 
 
-We need better abstractions for working with actors.
-Direct control, see the flow of computation.
-Composability
-Reasoning
-Separate businness and plumbing code.
+
+**Conclusion**
+
+- We need better abstractions for working with actors.
+- Direct control, see the flow of computation.
+- Composability
+- Reasoning
+- Separate business and plumbing code.
 
 
 
@@ -141,24 +150,9 @@ FRP with Javelin
 
 
 Lots of libraries. Some frameworks for pulling it all together:
-[Luminus](http://luminusweb.net)
-[Pedestal](http://pedestal.io) - good for JavaScript-heavy single-page apps
-[Hoplon](https://github.com/tailrecursion/hoplon) only client-side, HTML as expressions voodoo magic.
-
-
-
-
-
-
-
-
-
-
-
-Keynote: Programming for the Expression of Ideas
-====================================================
-**Gerald Jay Sussman - [Massachusetts Institute of Technology](http://www.eecs.mit.edu/)**
-
+- [Luminus](http://luminusweb.net)
+- [Pedestal](http://pedestal.io) - good for JavaScript-heavy single-page apps
+- [Hoplon](https://github.com/tailrecursion/hoplon) only client-side, HTML as expressions voodoo magic.
 
 
 
