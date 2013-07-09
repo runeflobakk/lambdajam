@@ -73,7 +73,7 @@ Looks like it is waiting and blocking the thread, but the macro is in fact makin
 Async is not a very good match for actor based applications. (Considered an anti-pattern at Typesafe)
 
 
-**[Machines](https://github.com/runarorama)**
+**[Machines](https://github.com/runarorama/scala-machines)**
 
 Composable network of stream processors
 
